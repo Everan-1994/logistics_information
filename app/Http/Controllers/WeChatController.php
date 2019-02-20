@@ -9,7 +9,14 @@ class WeChatController extends Controller
         $app = app('wechat.official_account');
 
         $app->server->push(function ($message) {
-            return "欢迎关注 everan！你发的信息为：";
+            switch ($message['MsgType']) {
+                case 'text':
+                    return '收到文字消息：' . $message['Content'];
+                    break;
+                default:
+                    return '欢迎关注 『物流信息』！';
+                    break;
+            }
         });
 
         return $app->server->serve();
