@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class WechatController extends Controller
+class WeChatController extends Controller
 {
     public function serve()
     {
