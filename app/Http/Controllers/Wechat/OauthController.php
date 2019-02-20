@@ -16,8 +16,13 @@ class OauthController extends Controller
 
     public function oauth()
     {
-        $response = $this->app->oauth->scopes(['snsapi_userinfo'])->redirect();
-        \Log::info(json_encode($response));
+        $response = $this->app->oauth->scopes(['snsapi_userinfo'])->redirect('/api/user');
+
         return $response;
+    }
+
+    public function user()
+    {
+        dd($this->app->oauth->user());
     }
 }
