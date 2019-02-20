@@ -9,10 +9,12 @@ class WeChatController extends Controller
         $app = app('wechat.official_account');
 
         $app->server->push(function ($message) {
-            \Log::info(json_encode($message));
+            \Log::info('123');
             return "欢迎关注 everan！你发的信息为：";
         });
 
-        return $app->server->serve();
+        $response = $app->server->serve();
+        \Log::info('1234:' . json_encode($response));
+        return $response;
     }
 }
