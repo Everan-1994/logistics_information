@@ -23,6 +23,45 @@ class OauthController extends Controller
 
     public function user()
     {
-        dd($this->app->oauth->user());
+        $user = $this->app->oauth->user();
+        echo $user->getId();
+    }
+
+    public function menu()
+    {
+        $buttons = [
+            [
+                "type" => "view",
+                "name" => "测试一",
+                "url"  => "http://loginfo.lzdu.com/api/oauth"
+            ],
+            [
+                "type" => "view",
+                "name" => "测试二",
+                "url"  => "http://loginfo.lzdu.com/api/oauth"
+            ],
+            [
+                "name" => "其他",
+                "sub_button"  => [
+                    [
+                        "type" => "view",
+                        "name" => "送货单表",
+                        "url"  => "http://www.baidu.com/"
+                    ],
+                    [
+                        "type" => "view",
+                        "name" => "个人中心",
+                        "url"  => "http://www.baidu.com/"
+                    ],
+                ]
+            ],
+        ];
+
+        $this->app->menu->create($buttons);
+    }
+
+    public function menuList()
+    {
+        dd($this->app->menu->list());
     }
 }
