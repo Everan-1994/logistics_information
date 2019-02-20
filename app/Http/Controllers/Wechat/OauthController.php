@@ -24,7 +24,7 @@ class OauthController extends Controller
     public function user()
     {
         $user = $this->app->oauth->user();
-        echo $user->getId();
+        dd($user);
     }
 
     public function menu()
