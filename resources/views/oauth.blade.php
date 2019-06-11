@@ -112,7 +112,7 @@
   crossorigin="anonymous"></script>
 <script type="text/javascript">
     $('#oauth').click(() => {
-        windows.location.href = 'https://merchants.lzdu.com/api/oauth';
+        window.location.href = 'https://merchants.lzdu.com/api/oauth';
     });
 
     $('#info').click(() => {
