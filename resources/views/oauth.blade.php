@@ -119,7 +119,7 @@
     $('#info').click(() => {
         let code = GetUrlParam('code')
         $.ajax({
-            url: 'https://merchants.lzdu.com/api/get_data?code' + code,
+            url: 'https://merchants.lzdu.com/api/get_data?code=' + code,
             type: 'get',
             dataType: 'json',
             success: (res) => {
