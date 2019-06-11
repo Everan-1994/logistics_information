@@ -100,8 +100,8 @@
 
         <div class="content">
             <div class="title m-b-md">
-                <a class="btn btn-danger" href="https://merchants.lzdu.com/api/oauth">发起授权</a>
-                <button id="oauth" class="btn btn-success">获取用户信息</button>
+                <button id="oauth" class="btn btn-danger">发起授权</button>
+                <button id="info" class="btn btn-success">获取用户信息</button>
             </div>
         </div>
     </div>
@@ -112,11 +112,16 @@
   crossorigin="anonymous"></script>
 <script type="text/javascript">
     $('#oauth').click(() => {
+        windows.location.href = 'https://merchants.lzdu.com/api/oauth';
+    });
+
+    $('#info').click(() => {
         $.ajax({
-            url: 'https://merchants.lzdu.com/api/oauth',
+            url: 'https://merchants.lzdu.com/api/oauth_callback',
             type: 'get',
+            dataType: 'json',
             success: (res) => {
-                console.log(res);
+                console.log(res)
             }
         })
     });
