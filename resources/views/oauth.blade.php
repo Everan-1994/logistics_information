@@ -118,7 +118,7 @@
 
     $('#info').click(() => {
         $.ajax({
-            url: 'https://merchants.lzdu.com/api/oauth_callback',
+            url: 'https://merchants.lzdu.com/api/get_data',
             type: 'get',
             dataType: 'json',
             success: (res) => {
