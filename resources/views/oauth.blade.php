@@ -75,6 +75,11 @@
             background-color: #5cb85c;
             border-color: #4cae4c;
         }
+        .btn-danger {
+            color: #fff;
+            background-color: #E91E63;
+            border-color: #F44336;
+        }
     </style>
 </head>
 <body>
@@ -95,7 +100,8 @@
 
         <div class="content">
             <div class="title m-b-md">
-                <button id="oauth" class="btn btn-success">发起授权</button>
+                <a class="btn btn-danger" href="https://merchants.lzdu.com/api/oauth">发起授权</a>
+                <button id="oauth" class="btn btn-success">获取用户信息</button>
             </div>
         </div>
     </div>
