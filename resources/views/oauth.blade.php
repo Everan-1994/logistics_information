@@ -111,23 +111,29 @@
   integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
 <script type="text/javascript">
+    // 发起授权
     $('#oauth').click(() => {
         let url = window.location.href;
         window.location.href = 'https://merchants.lzdu.com/api/oauth?back_url=' + encodeURI(url);
     });
 
+    // 授权完毕 执行登录
     $('#info').click(() => {
         let code = GetUrlParam('code')
         $.ajax({
-            url: 'https://merchants.lzdu.com/api/get_data?code=' + code,
-            type: 'get',
+            url: 'https://merchants.lzdu.com/api/login',
+            type: 'post',
             dataType: 'json',
+            data: {
+                'code': code
+            }
             success: (res) => {
                 console.log(res)
             }
         })
     });
 
+    // 获取 url 指定 参数
     function GetUrlParam(paraName) {
 　　　　var url = document.location.toString();
 　　　　var arrObj = url.split("?");
