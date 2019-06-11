@@ -40,4 +40,10 @@ class WeChatController extends Controller
 
         return view('welcome', compact('qrcodeUrl'));
     }
+
+    public function index()
+    {
+        return view('oauth');   
+    }
+
 }

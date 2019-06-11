@@ -1,5 +1,5 @@
 <?php
 
-Route::get('/', 'WeChatController@code');
+Route::get('/', 'WeChatController@index');
 
 Route::any('/wechat', 'WeChatController@serve');
