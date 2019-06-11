@@ -126,7 +126,7 @@
             dataType: 'json',
             data: {
                 'code': code
-            }
+            },
             success: (res) => {
                 console.log(res)
             }
